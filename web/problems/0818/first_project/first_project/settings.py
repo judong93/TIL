@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fc@=$wt_!zh#g1sblgryj=^q2jyij2ci#b#(a2_)rc@r-p$4n#'
+SECRET_KEY = 'rnv=uv%#6+&li@4g-3*lsz=gc&1aljygsid_o@yj8=4n=*xq1='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,8 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'pages',
+    # 1. local apps
     'articles',
+    'pages',
+    # 2. 3rd party apps
+    # 3. django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'first_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'first_project' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 

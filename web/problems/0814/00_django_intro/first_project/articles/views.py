@@ -1,5 +1,5 @@
 import random
-import datetime
+from datetime import datetime
 from django.shortcuts import render
 
 # Create your views here.
@@ -27,11 +27,14 @@ def hello(request, name):
 def dtl_practice(request):
     menus = ['짜장면', '탕수육', '짬뽕']
     empty_list = []
-    today = datetime.datetime.now()
+    my_sentence = '주동이는 유학파야!'
+    datetimenow = datetime.now()
+
     context = {
         'menus' : menus,
         'empty_list': empty_list,
-        'today' : today
+        'my_sentence' : my_sentence,
+        'datetimenow' : datetimenow,
     }
     return render(request, 'dtl_practice.html', context)
 

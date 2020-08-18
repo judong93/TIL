@@ -1,4 +1,4 @@
-"""first_project URL Configuration
+"""intro URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -18,7 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # artices/로 시작하는 url 요청은 articles 앱의 url.py에서 처리해라고 위임
-    path('articles/', include('articles.urls')),
     path('pages/', include('pages.urls')),
 ]
