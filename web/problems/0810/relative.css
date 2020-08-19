@@ -1,0 +1,35 @@
+.box {
+  width: 150px;
+  height: 150px;
+  background: lightcoral;
+  border: 2px dotted black;
+  border-radius: 8px;
+
+  /* 가운데 글자 스타일링 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+/* 
+  Position 속성(Property)
+  값
+     - static (default value)
+     - relative : 요소의 원래 자기 위치를 기준으로 배치한다. (문서 흐름 유지)
+     - absolute : 위치 상 부모 요소 기준으로 배치한다. (문서 흐름에서 제거)
+     - fixed
+     - (sticky)
+*/
+
+.relative {
+  position: relative;
+  top: 50px;
+  left: 150px;
+}
+
+
+
+
+
+

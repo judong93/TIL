@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+{% for j in community_dummy_data %}
+    {% if forloop.counter0 == 0 %}
+        <thead>
+            <tr>
+            <th scope="col">{{ j.0 }}</th>
+            <th scope="col">{{ j.1 }}</th>
+            <th scope="col">{{ j.2 }}</th>
+            <th scope="col">{{ j.3 }}</th>
+            </tr>
+        </thead>
+    {% else %}
+        <tbody>
+            <tr>
+            <th scope="row">{{ forloop.counter0 }}</th>
+            <td>{{ j.0 }}</td>
+            <td>{{ j.1 }}</td>
+            <td>{{ j.2 }}</td>
+            </tr>
+        </tbody>
+    {% endif %}
+{% endfor %}
+</table>
+{% endblock %}
