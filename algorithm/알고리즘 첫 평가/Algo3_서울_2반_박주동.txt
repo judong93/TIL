@@ -1,0 +1,38 @@
+```
+def sear(num, I, result): # 학생 순서, 지울 색상의 인덱스, 최소값들의 합
+    cards = stu[num] # 학생의 카드 정보
+    minv = 15
+    for idx, card in enumerate(cards):
+        if card < minv and idx != I: # 전 학생의 무늬와 겹치는것은 고려 하지 않는다.
+            minv = card
+    result += minv # 가지고 있는 카드의 최소값을 더한다.
+    if num == N-1:
+        return result # 마지막 학생이면 최종 결과값을 리턴한다.
+    for i in range(4):
+        if cards[i] == minv: # 최소값의 개수만큼 최소값을 더하는 함수를 돌린다.
+            sear(num+1, i, result)
+
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input()) # 학생 수
+    stu = [list(map(int, input().split())) for _ in range(N)]
+    print(sear(0, 5, 0))
+    # 위와 같은 로직이라면 각 학생들이 최소값을 선택했을 때 총합의 모든 경우의 수를 리턴할 수 있을거라고 생각했으나, None이 나옵니다.
+    #  여러 함수를 불러내서 각각 리턴을 내는 경우 값이 None으로 결과값이 나오는지가 궁금합니다.
+
+'''
+input 값 예시(테스트 케이스 수, 학생 수, 카드 정보)
+1
+7
+7 8 9 10
+1 2 3 4
+4 7 5 5
+3 3 5 6 
+1 5 9 10
+7 7 7 8
+9 5 3 1
+
+'''
+
+```
