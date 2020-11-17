@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Cat Image</h1>
+        <p>{{ imgSrcSlash }}</p>
+        <img :src="imgSrc" alt="cat">
+        <button @click="getCatImage">집사 이리와</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                imgSrc: '',
+            },
+            computed: {
+                // 특정한 데이터를 가공해서,
+                // 새로운 값으로 만들어서 저장하고 싶은 경우
+                // 계산된 값은 return 하고,
+                // key 이름은 변수 이름처럼 사용한다.
+                imgSrcSlash: function () {
+                    return this.imgSrc + '/hate'
+                }
+            },
+            watch: {
+                // 방아쇠(Trigger) 역할
+                // 어떤 조건이 되면 특정한 로직을 실행해!
+                // 단순히 데이터값 저장 뿐만 아니라,
+                // 부가적인 기능(로직) 수행도 포함된다.
+                imgSrc: function (newValue, oldValue) {
+                    console.log('watch!!')
+                    console.log(newValue)
+                    console.log(oldValue)
+                },
+            },
+            methods: {
+                getCatImage: function () {
+                    const CAT_API_URI = 'https://api.thecatapi.com/v1/images/search'
+                    axios.get(CAT_API_URI)
+                      .then(res => {
+                          console.log(this)
+
+                          this.imgSrc = res.data[0].url
+                      })
+                      .catch(err => console.log(err))
+                },
+            },
+        })
+    </script>
+</body>
+</html>

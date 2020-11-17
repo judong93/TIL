@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo CRUD</title>
+</head>
+<body>
+    <input type="text">
+    <button>Todo!</button>
+    <ul></ul>
+
+    <script>
+        function addTodo () {
+            const input = document.querySelector('input')
+            const content = input.value
+
+            const li = document.createElement('li')
+            li.innerText = content
+
+            const ul = document.querySelector('ul')
+            ul.appendChild(li)
+        }
+
+    </script>
+</body>
+</html>

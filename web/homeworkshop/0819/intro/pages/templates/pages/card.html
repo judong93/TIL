@@ -5,12 +5,12 @@
     <div class="d-flex row row-cols-3">
     {% for a,b in card_dummy_data %}
         <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://i.picsum.photos/id/694/200/300.jpg?hmac=fAbYLUWtofDk7qWl4qOA_p9o2oSC3vylIK8clCV-ttk" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{ a }}</h5>
-            <p class="card-text"> {{ b }} </p>
-            <a href="{% url 'pages:community' %}" class="btn btn-primary">Post Article</a>
-        </div>
+            <img class="card-img-top" src="https://i.picsum.photos/id/694/200/300.jpg?hmac=fAbYLUWtofDk7qWl4qOA_p9o2oSC3vylIK8clCV-ttk" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ a }}</h5>
+                <p class="card-text"> {{ b }} </p>
+                <a href="{% url 'pages:community' %}" class="btn btn-primary">Post Article</a>
+            </div>
         </div>
     {% endfor %}
     </div>
